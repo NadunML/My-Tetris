@@ -1,0 +1,400 @@
+/* ===== RESET & GLOBAL ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  height: 100dvh; /* Changed to dvh to fix mobile browser bar issues */
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+  background: #0b1120;
+  background: radial-gradient(circle at center, #1a2235 0%, #03060c 100%);
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: none; 
+}
+
+/* ===== MAIN CONTAINER ===== */
+.game-container {
+  height: 94dvh; 
+  max-height: 850px;
+  background: rgba(8, 14, 26, 0.65);
+  backdrop-filter: blur(12px);
+  border-radius: 2.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 255, 255, 0.15);
+  box-shadow: 0 25px 40px rgba(0, 0, 0, 0.8), inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  width: 95%;
+  max-width: 900px;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ===== INFO PANEL ===== */
+.game-info {
+  width: 280px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(3, 8, 18, 0.7);
+  backdrop-filter: blur(16px);
+  border-radius: 1.5rem;
+  padding: 1.8rem 1.5rem;
+  border: 1px solid rgba(0, 210, 255, 0.2);
+}
+
+.logo-area {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo-area h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #c0f2ff, #2bd2ff, #0099ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+}
+
+.logo-area h1 span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6ad4ff;
+  letter-spacing: 1px;
+}
+
+.glow-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #0ff, transparent);
+  margin: 0.5rem auto 0;
+  border-radius: 4px;
+}
+
+.score-module {
+  background: #01050ee0;
+  border-radius: 1.2rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(0, 230, 200, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9cc9ff;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.score-value {
+  font-size: 3rem;
+  font-weight: 800;
+  font-family: 'Monaco', 'Courier New', monospace;
+  color: #0ff;
+  text-shadow: 0 0 15px rgba(0, 255, 255, 0.6);
+  line-height: 1;
+}
+
+.action-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.action-btn {
+  flex: 1;
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.play-btn {
+  background: linear-gradient(145deg, #00b894, #008a6e);
+  box-shadow: 0 5px 0 #005a46;
+}
+
+.pause-btn {
+  background: linear-gradient(145deg, #ff6b4a, #e63e2e);
+  box-shadow: 0 5px 0 #8c2e1c;
+}
+
+.restart-btn {
+  background: linear-gradient(145deg, #0984e3, #06528d);
+  box-shadow: 0 5px 0 #04365d;
+}
+
+.action-btn:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+
+.controls-panel {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.controls-panel p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #cdedff;
+  font-size: 0.8rem;
+  margin: 10px 0;
+}
+
+.controls-panel i {
+  width: 24px;
+  color: #0ff;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.status-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.status-led {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #2ecc71;
+  box-shadow: 0 0 10px #2ecc71;
+}
+
+.status-led.paused {
+  background: #f39c12;
+  box-shadow: 0 0 10px #f39c12;
+}
+
+.status-led.gameover {
+  background: #e74c3c;
+  box-shadow: 0 0 10px #e74c3c;
+}
+
+/* ===== CANVAS & PLAY AREA ===== */
+.main-play-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  flex: 1;
+  min-height: 0;
+}
+
+.canvas-stage {
+  position: relative;
+  height: 100%;
+  background: #01050c;
+  border-radius: 0.5rem;
+  padding: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(0, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+canvas {
+  height: 100%; 
+  max-height: 100%;
+  width: auto; 
+  aspect-ratio: 360 / 600; 
+  display: block;
+  border-radius: 0.3rem;
+  background-color: #000000;
+  box-shadow: 0 0 0 1px rgba(0, 200, 255, 0.1);
+}
+
+/* ===== MOBILE GAMEPAD ===== */
+.mobile-gamepad {
+  display: none;
+  width: 100%;
+  margin-top: 15px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.d-pad, .action-pad {
+  display: flex;
+  gap: 10px;
+}
+
+.m-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: #0ff;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  touch-action: manipulation; 
+}
+
+.m-btn:active {
+  background: rgba(0, 255, 255, 0.2);
+  transform: scale(0.95);
+}
+
+.drop-btn {
+  background: rgba(255, 74, 74, 0.1);
+  border-color: rgba(255, 74, 74, 0.5);
+  color: #ff4a4a;
+}
+.drop-btn:active { background: rgba(255, 74, 74, 0.3); }
+
+/* ===== RESPONSIVE DESIGN (Mobile View 100% Fixed) ===== */
+@media (max-width: 800px) {
+  .game-container {
+    height: 100dvh; /* Absolute fix for browser bars */
+    width: 100vw;
+    padding: 10px;
+    border-radius: 0;
+    border: none;
+    max-width: 100%;
+  }
+  .game-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .game-info {
+    width: 100%;
+    height: auto;
+    flex-direction: column; 
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 1rem;
+  }
+  .top-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .logo-area { margin-bottom: 0; }
+  .logo-area h1 { font-size: 1.6rem; }
+  .glow-line { display: none; }
+  
+  .score-module {
+    margin: 0;
+    padding: 6px 12px;
+    border-radius: 1rem;
+  }
+  .score-label { font-size: 0.5rem; margin-bottom: 2px; }
+  .score-value { font-size: 1.3rem; }
+  
+  .bottom-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .action-group { 
+    display: flex;
+    width: 100%;
+    margin-bottom: 0; 
+    gap: 8px;
+  }
+  .action-btn { 
+    flex: 1; /* Forces buttons to share width equally */
+    padding: 8px 0; 
+    height: 40px; /* Fixed height so they don't stretch */
+    font-size: 1.1rem; 
+  }
+  .action-btn span { 
+    display: none; 
+  }
+  .desktop-only { display: none; } 
+  .status-area { display: none; } /* Hidden on mobile to save space */
+
+  .main-play-area {
+    flex: 1; /* Takes up the remaining space dynamically */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes Gamepad to bottom */
+    min-height: 0; 
+  }
+  
+  .canvas-stage {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    min-height: 0; /* Important for flex shrinking */
+  }
+
+  canvas {
+    height: 100%;
+    max-height: 52vh; /* Ensures canvas doesn't push buttons off screen */
+    width: auto;
+  }
+  
+  .mobile-gamepad {
+    display: flex; 
+    padding: 5px;
+    margin-top: 0;
+    margin-bottom: 10px; /* Buffer at the bottom */
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+  .m-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+  .logo-area h1 { font-size: 1.4rem; }
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="description" content="Modern Tetris – sleek design, smooth gameplay">
+  <title>My Tetris</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,500;14..32,700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="game-wrapper">
+      
+      <aside class="game-info">
+        <div class="top-section">
+          <div class="logo-area">
+            <h1>MyTetris<span>1.0v</span></h1>
+            <div class="glow-line"></div>
+          </div>
+
+          <div class="score-module">
+            <div class="score-label">current score</div>
+            <div class="score-value" id="scoreValue">0</div>
+          </div>
+        </div>
+
+        <div class="bottom-section">
+          <div class="action-group">
+            <button class="action-btn play-btn" id="playBtn" title="Start">
+              <i class="fas fa-play"></i>
+            </button>
+            <button class="action-btn pause-btn" id="pauseBtn" title="Pause">
+              <i class="fas fa-pause"></i>
+            </button>
+            <button class="action-btn restart-btn" id="restartBtn" title="Restart">
+              <i class="fas fa-redo"></i>
+            </button>
+          </div>
+
+          <div class="controls-panel desktop-only">
+            <p><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> Move</p>
+            <p><i class="fas fa-arrow-down"></i> Soft Drop</p>
+            <p><i class="fas fa-arrow-up"></i> Rotate</p>
+            <p><i class="fas fa-bolt"></i> Enter → Hard Drop</p>
+            <p><i class="fas fa-play"></i> Space → Play / Pause</p>
+          </div>
+
+          <div class="status-area">
+            <div class="status-led" id="statusLed"></div>
+            <span id="statusMessage">READY</span>
+          </div>
+        </div>
+      </aside>
+
+      <div class="main-play-area">
+        <div class="canvas-stage">
+          <canvas id="tetrisCanvas" width="360" height="600"></canvas>
+        </div>
+
+        <div class="mobile-gamepad">
+          <div class="d-pad">
+            <button class="m-btn" id="mLeft"><i class="fas fa-arrow-left"></i></button>
+            <button class="m-btn" id="mDown"><i class="fas fa-arrow-down"></i></button>
+            <button class="m-btn" id="mRight"><i class="fas fa-arrow-right"></i></button>
+          </div>
+          <div class="action-pad">
+            <button class="m-btn rotate-btn" id="mRotate"><i class="fas fa-rotate-right"></i></button>
+            <button class="m-btn drop-btn" id="mDrop"><i class="fas fa-bolt"></i></button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
